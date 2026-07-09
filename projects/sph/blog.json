@@ -1,0 +1,16 @@
+[
+	{
+		"slug": "sph-what-is-different",
+		"title": "Ghost Particles",
+		"date": "July 9, 2026",
+		"summary": "In this entry, I will discuss one of the core changes I have made from the intial implementation inspired by Sebastian Lague.",
+		"content": "<p>While my simulation still shares much of the core foundation of Sebastian's, the biggest change (outside of choice in engine) is likely around how collision are handled. Where his version used direct checks against the bounding box, I have switched to a SDF (Signed Distance Field) approach in combination with \"ghost\" particles. Instead of checking if a particle has entered the bounds of the SDF and then pushing it back out, I spawn a series of particles along the boundary of the SDF. These particles are fixed in place relative to its parent. When a simulating particle approaches these ghost particles, we drive the density/pressure the same way we would if it where hitting other sim particles. This naturally creates high pressue along the edges.</p>"
+	},
+	{
+		"slug": "sph-intro",
+		"title": "How it started",
+		"date": "July 8, 2026",
+		"summary": "In this entry, my general inspiration to work on a fluid sim and the early history of the project.",
+		"content": "<p>Dynamic simulations have long been a passion of mine. In my professional career, I have had the opportunity to directly work on hair and cloth simulations. Unforunately, character pipelines rarely (if ever) involve the need for in-depth fluid simulations. So inspired by one of my favorite YouTubers, Sebastian Lague, I decided to build one myself. Sebastian has an excellent multi-part series, where he covers the core concepts, basic math, and rendering techniques for building a fluid simulation just the like one I have been working. Infact, my simulation began by following his video as a tutorial and even directly translating code from his GitHub repository to GdScript and GLSL. However, once I reached a point where the simulation was more or less functional, I began to diverge, exploring my alternative ideas on how to get a more stable simulation."
+	}
+]
